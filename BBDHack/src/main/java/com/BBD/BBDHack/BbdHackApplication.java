@@ -1,4 +1,4 @@
-package com.example.BBDHack;
+package com.BBD.BBDHack;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

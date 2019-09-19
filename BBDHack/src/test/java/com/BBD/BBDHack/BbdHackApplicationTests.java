@@ -1,4 +1,4 @@
-package com.example.BBDHack;
+package com.BBD.BBDHack;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
