@@ -18,7 +18,7 @@ public class QuestionRepository {
         initialseQuestion();
         Questions example;
         if (Objects.isNull(id)) {
-            example = questions.get(0);
+            example = questions.get((int) (Math.random()*questions.size()));
         }else {
             example = questions.stream().filter(questions1 -> questions1.getQuestionID() == (id)).findFirst().get();
         }
@@ -51,6 +51,7 @@ public class QuestionRepository {
 
 
     public void initialseQuestion(){
+        this.questions.clear();
         Answer firstAnswer = new Answer(1,"String a = \"racecar\", b = \"\";");
         Answer secondAnswer = new Answer(2,"int n = a.length();");
         Answer thirdAnswer = new Answer(3,"for(int i = n - 1; i >= 0; i--)  b = b + a.charAt(i);");
@@ -64,6 +65,31 @@ public class QuestionRepository {
         answers.add(fifthAnswer);
         Questions questions = new Questions(1,"Check whether a racecar is a Palindrome",answers);
         this.questions.add(questions);
-
+        firstAnswer = new Answer(1,"String out=\"\"");
+        secondAnswer = new Answer(2,"for (int i=0;i<5;i++)");
+        thirdAnswer = new Answer(3,"for (int j=0;j<=i;j++)");
+        forthAnswer = new Answer(4,"out=out+\"x\"");
+        fifthAnswer = new Answer(5,"out = out +\\n");
+        answers = new LinkedList<>();
+        answers.add(firstAnswer);
+        answers.add(secondAnswer);
+        answers.add(thirdAnswer);
+        answers.add(forthAnswer);
+        answers.add(fifthAnswer);
+        questions = new Questions(2,"Build a pyramid of x's, with 5 layers using a for loop",answers);
+        this.questions.add(questions);
+        firstAnswer = new Answer(1,"int a = 10; int b =15;");
+        secondAnswer = new Answer(2,"if (a>=b)");
+        thirdAnswer = new Answer(3,"return a");
+        forthAnswer = new Answer(4,"else");
+        fifthAnswer = new Answer(5,"return b");
+        answers = new LinkedList<>();
+        answers.add(firstAnswer);
+        answers.add(secondAnswer);
+        answers.add(thirdAnswer);
+        answers.add(forthAnswer);
+        answers.add(fifthAnswer);
+        questions = new Questions(3,"How would you determine the larger of two integers?",answers);
+        this.questions.add(questions);
     }
 }
